@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#header{
+    background-image: url('../src/images/desktop/image-hero.jpg');
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+@media (max-width: 576px) {
+    #header{
+        background-image: url('../src/images/mobile/image-hero.jpg');
+        background-position: center;
+        /* background-size:c ; */
+    }
+}
+
+
+/* hamburger menu  */
+
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+.hamburger-top,
+.hamburger-middel,
+.hamburger-buttom{
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+.hamburger-middel{
+    transform: translateY(7px);
+}
+.hamburger-buttom{
+    transform: translateY(14px);
+}
+
+.open{
+    transform: rotate(90deg);
+}
+.open .hamburger-top{
+    transform: rotate(45deg)
+    translateY(6px) 
+    translateX(6px);    
+}
+.open .hamburger-middel{
+    display: none;    
+}
+.open .hamburger-buttom{
+    transform: rotate(-45deg)
+    translateY(6px) 
+    translateX(-6px);    
+}
+
+/* buttom  */
+@layer components{
+    .btn{
+        @apply font-sans border-2 border-black uppercase px-7 py-2 font-bold tracking-[3px] transition duration-500 hover:bg-black hover:text-white
+    }
+    .group-hover{
+        @apply object-cover  duration-500  group-hover:scale-110
+    }
+}
